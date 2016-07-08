@@ -1,11 +1,13 @@
 import React from 'react';
+import ToDoFeed from './ToDoFeed';
+
+const feedUrl = "https://ancient-coast-90229.herokuapp.com/todos.json";
 
 class App extends React.Component {
     render() {
         return (
-          <div>
-            <h1>Things I need to do!</h1>
-          </div>
+          <ToDoFeed url={feedUrl} />
+          // How to get feed from Heroku site?
         );
     }
 }
