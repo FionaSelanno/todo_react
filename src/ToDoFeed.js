@@ -9,13 +9,29 @@ class ToDoFeed extends React.Component {
 
     this.state = {
       title: "Loading...",
-      todoItem: []
+      todoItems: []
     };
 }
+
+
+  reloadTodos(event) {
+    let projectId = this.props.projectId;
+    let component = this;
+
+    $.getJSON(`https://ancient-coast-90229.herokuapp.com/todos`, function(data) {
+      console.log(data);
+
+      component.setState({
+        todoItems: data
+      });
+
+
+    });
+  }
   renderToDoItem(item, index) {
    console.log(item);
    return (
-     <h2></h2>
+     <h2><ToDoItem /></h2>
    );
  }
 
